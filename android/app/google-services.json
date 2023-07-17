@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "485553656526",
+    "project_id": "toi-hoc-fullter-mynotes",
+    "storage_bucket": "toi-hoc-fullter-mynotes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485553656526:android:ab033b463a83978b05f69f",
+        "android_client_info": {
+          "package_name": "learn.flutter.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485553656526-23t47rcvpqq07gnj8t0fb3mbsq4jadar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtEsVI8lJankm2PGDuQHxChLC0HFATFYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485553656526-23t47rcvpqq07gnj8t0fb3mbsq4jadar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
