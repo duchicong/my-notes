@@ -38,16 +38,22 @@ class HomePage extends StatelessWidget {
             final user = FirebaseAuth.instance.currentUser;
             // final emailVerified = user?.emailVerified ?? false;
             print(user);
-            // if (user != null) {
-            //   // Navigator.of(context).push(MaterialPageRoute(
-            //   //     builder: (context) => const RegisterView()));
-
-            // } else if (emailVerified) {
-            // } else {
-            //   return const VerifyEmailView();
-            // }
-            // return const Text('Done');
-            return const LoginView();
+            if (user != null) {
+              if (user.emailVerified) {
+                print('Email is verified');
+              } else {
+                return const VerifyEmailView();
+              }
+            } else {
+              return const LoginView();
+            }
+            return Scaffold(
+                appBar: AppBar(
+                  title: const Text('Home page'),
+                ),
+                body: Column(
+                  children: [Text('content')],
+                ));
           default:
             return const CircularProgressIndicator();
         }
