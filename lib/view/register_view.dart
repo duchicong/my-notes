@@ -1,7 +1,6 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mynotes/firebase_options.dart';
+import 'dart:developer' as devtools show log;
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
@@ -57,16 +56,18 @@ class _RegisterViewState extends State<RegisterView> {
                       .createUserWithEmailAndPassword(
                           email: email, password: password);
 
-                  print(userCredential);
+                  devtools.log(userCredential.toString());
                 } on FirebaseAuthException catch (error) {
                   if (error.code == 'invalid-email') {
-                    print('ERROR: The email address is badly formatted.');
+                    devtools
+                        .log('ERROR: The email address is badly formatted.');
                   } else if (error.code == 'weak-password') {
-                    print('ERROR: Weak password');
+                    devtools.log('ERROR: Weak password');
                   } else if (error.code == 'email-already-in-use') {
-                    print('ERROR: Email already in use');
+                    devtools.log('ERROR: Email already in use');
                   } else {
-                    print('ERROR: Something else happended ${error.code}');
+                    devtools
+                        .log('ERROR: Something else happended ${error.code}');
                   }
                 }
               },
